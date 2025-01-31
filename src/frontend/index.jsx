@@ -8,7 +8,6 @@ import { MONTH_PICKER } from './data';
     - PERIOD_A days, 
     - between PERIOD_A and PERIOD_B days, and 
     - over PERIOD_B days. */
-
 const PERIOD_A = 2;
 const PERIOD_B = 4;
 
@@ -79,7 +78,6 @@ const App = () => {
     <>  
         <BottomPaddedBox>
           <Heading as="h1">Resolution time report</Heading>
-          <Heading as="h3">Project: {context ? context.extension.project.key : 'Loading...'}</Heading>
         </BottomPaddedBox>
         <BottomPaddedBox>
           <Label labelFor="month-picker">Select reporting period</Label>
@@ -87,13 +85,12 @@ const App = () => {
             onChange={(data) => setReportingPeriod(data.value)}
             id="month-picker" 
             options={MONTH_PICKER} 
-            defaultValue={month}
             placeholder="select a month"/>  
         </BottomPaddedBox> 
           <MainBox>
             <Stack>
               {groupData && atlassianComponentsReport()}
-              <Frame resource='frame-report' />
+              <Frame resource='frame-visx' />
             </Stack>
           </MainBox>
     </>

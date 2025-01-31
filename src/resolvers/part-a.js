@@ -1,6 +1,6 @@
 
 import Resolver from '@forge/resolver';
-import api, { route, storage } from '@forge/api';
+import api, { route } from '@forge/api';
 
 const jiraDate = (d) => {
   const date = new Date(d)
@@ -27,7 +27,6 @@ const getIssues = async(key, start, end) => {
     return(data);
   } else 
   {  
-    console.log("Response:")
     console.log(response)
     return(response)
   }
@@ -36,12 +35,10 @@ const getIssues = async(key, start, end) => {
 const resolver = new Resolver();
 
 resolver.define('setConfig', async (req) => {
-  console.log("setConfig");
   console.log(req);
 })
 
 resolver.define('getIssues', async (req) => {
-  console.log("getIssues");
   const data = await getIssues(req.context.extension.project.key, req.payload.start, req.payload.end);
   return data;
 

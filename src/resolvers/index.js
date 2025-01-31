@@ -70,7 +70,6 @@ const getIssues = async(key, start, end) => {
     return(data);
   } else 
   {  
-    console.log("Response:")
     console.log(response)
     return(response)
   }
@@ -79,7 +78,6 @@ const getIssues = async(key, start, end) => {
 const resolver = new Resolver();
 
 resolver.define('getIssues', async (req) => {
-  
   const first = new Date(req.payload.reportingPeriod.split("-")[0], req.payload.reportingPeriod.split("-")[1], 1)
   const last = new Date(req.payload.reportingPeriod.split("-")[0], Number(req.payload.reportingPeriod.split("-")[1]) + 1, 0)
 

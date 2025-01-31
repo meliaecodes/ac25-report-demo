@@ -1,0 +1,27 @@
+modules:
+  jira:projectPage:
+    - key: report-demo
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: report-demo
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+  - key: frame-report
+    path: resources/frame-report/build
+app:
+  runtime:
+    name: nodejs22.x
+  id: run forge register
+permissions:
+  scopes:
+    - storage:app
+    - read:jira-work
+  content:
+    styles:
+      - unsafe-inline

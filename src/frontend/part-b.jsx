@@ -43,30 +43,30 @@ const App = () => {
       <>
       <BottomPaddedBox>
         <Inline spread='space-between'>
-          <PieChart
-              title="Resolved Issues"
-              subtitle="Count of resolved issues, by age in buisness days"
-              data={[
-                ['group_a', 'Under ' + PERIOD_A + ' days', groupData.Resolved.groupA.length],
-                ['group_b',PERIOD_A + ' - ' + PERIOD_B + ' days', groupData.Resolved.groupB.length],
-                ['group_c', 'over ' + PERIOD_B + ' or more days', groupData.Resolved.groupC.length],
-              ]}
-            colorAccessor={0} // position 0 in item array
-            labelAccessor={1} // position 1 in item array
-            valueAccessor={2} // position 2 in item array
-          /> 
-          <BarChart 
-            title="Unresolved Issues"
-            subtitle="Count of unresolved issues, by age in buisness days"
-            width='600px'
+        <PieChart
+            title="Resolved Issues"
+            subtitle="Count of resolved issues, by age in buisness days"
             data={[
-              ['Under ' + PERIOD_A + ' days', groupData.Unresolved.groupA.length],
-              [PERIOD_A + ' - ' + PERIOD_B + ' days', groupData.Unresolved.groupB.length],
-              [PERIOD_B + ' or more days', groupData.Unresolved.groupC.length],
+              ['group_a', 'Under ' + PERIOD_A + ' days', groupData.Resolved.groupA.length],
+              ['group_b',PERIOD_A + ' - ' + PERIOD_B + ' days', groupData.Resolved.groupB.length],
+              ['group_c', 'over ' + PERIOD_B + ' or more days', groupData.Resolved.groupC.length],
             ]}
-            xAccessor={0}
-            yAccessor={1} 
-          />
+          colorAccessor={0} // position 0 in item array
+          labelAccessor={1} // position 1 in item array
+          valueAccessor={2} // position 2 in item array
+        /> 
+        <BarChart 
+          title="Unresolved Issues"
+          subtitle="Count of unresolved issues, by age in buisness days"
+          width='600px'
+          data={[
+            ['Under ' + PERIOD_A + ' days', groupData.Unresolved.groupA.length],
+            [PERIOD_A + ' - ' + PERIOD_B + ' days', groupData.Unresolved.groupB.length],
+            [PERIOD_B + ' or more days', groupData.Unresolved.groupC.length],
+          ]}
+          xAccessor={0}
+          yAccessor={1} 
+        />
       </Inline>
       </BottomPaddedBox>
       </>

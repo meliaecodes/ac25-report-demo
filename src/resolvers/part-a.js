@@ -12,7 +12,6 @@ const jiraDate = (d) => {
 
 const getIssues = async(key, start, end) => {
 
-  console.log("calling getIssues API");
   const fields = 'created, creator, assignee, resolutiondate, customfield_10030';
   const jql = `project = ${key} AND created >= ${jiraDate(start)} AND created <= ${jiraDate(end)}`;
   
@@ -33,10 +32,6 @@ const getIssues = async(key, start, end) => {
 }
 
 const resolver = new Resolver();
-
-resolver.define('setConfig', async (req) => {
-  console.log(req);
-})
 
 resolver.define('getIssues', async (req) => {
   const data = await getIssues(req.context.extension.project.key, req.payload.start, req.payload.end);

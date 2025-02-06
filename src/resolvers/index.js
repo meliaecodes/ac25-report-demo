@@ -87,4 +87,9 @@ resolver.define('getIssues', async (req) => {
   
 });
 
+resolver.define('getText', (req) => {
+  console.log(req);
+  return 'Hello Brussels!';
+});
+
 export const handler = resolver.getDefinitions();
